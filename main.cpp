@@ -13,7 +13,6 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     qmlRegisterType<MyClass>("App", 1, 0, "MyClass");
-    qmlRegisterType<LogModel>("App", 1, 0, "LogModel");
 
     QQmlApplicationEngine engine;
 

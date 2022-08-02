@@ -8,19 +8,17 @@
 class MyClass : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(LogModel *model READ model WRITE setModel NOTIFY modelChanged)
+    Q_PROPERTY(QAbstractListModel* model READ logModel CONSTANT)
 public:
     explicit MyClass(QObject *parent = nullptr);
 
 public slots:
     void start();
-
-    LogModel* model();
-    void setModel(LogModel* model);
+    LogModel* logModel();
+    void addLogSample();
 
 signals:
     void done();
-    void modelChanged();
 
 private:
     LogModel* m_model;
